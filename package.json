@@ -1,0 +1,29 @@
+{
+  "name": "Github-Search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrtSkr/Github-Search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrtSkr/Github-Search/issues"
+  },
+  "homepage": "https://github.com/BrtSkr/Github-Search#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.8.0",
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "sass": "^1.49.7"
+  },
+  "description": ""
+}

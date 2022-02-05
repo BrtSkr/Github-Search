@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'readex';
+    src: url(../fonts/ReadexPro-Regular.ttf) format("truetype");
+}
+*{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+p{
+    margin: 0;
+}
+body{
+    width: 96%;
+    margin: 0 auto;
+    background: rgb(19, 19, 56);
+    font-family: $font-main;
+}
+
+.container{
+    width: 100%;
+}
+.hide{
+    display: none;
+}
