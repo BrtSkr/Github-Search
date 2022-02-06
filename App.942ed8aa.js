@@ -122,15 +122,15 @@ var searchBar = document.querySelector(".search-input");
 var names = document.querySelectorAll(".result-info");
 var fetchButton = document.querySelector("[data-fetch]");
 
-var loadInfo = function loadInfo(req) {
+var loadInfo = function loadInfo(user_api, repo_api) {
   var avatar = document.querySelector("[data-avatar]");
   var username = document.querySelector("[data-username]");
   var userURL = document.querySelector("[data-url]");
   var creationDate = document.querySelector("[data-creation-date]");
-  var dataLocation = document.querySelector("[data-location]");
+  var dataLocation = document.querySelector("[data-location]"); //loads information about user such as avatar, username, github URL
 
   var userInformation = function userInformation() {
-    fetch(req).then(function (response) {
+    fetch(user_api).then(function (response) {
       var processing = response.json();
       return processing;
     }).then(function (processed) {
@@ -141,67 +141,50 @@ var loadInfo = function loadInfo(req) {
       dataLocation.textContent = processed.location;
       console.log(processed);
     });
+  }; //loads infomartion about user's repositories
+
+
+  var userRipos = function userRipos() {
+    fetch(repo_api).then(function (response) {
+      var jsonResponse = response.json();
+      return jsonResponse;
+    }).then(function (processed) {
+      var repoParent = document.querySelector(".repo"); //parent where elements will be created
+      //if p
+
+      while (repoParent.firstChild) {
+        repoParent.firstChild.remove();
+      } //creates elements that equal a number of repositories of a user
+      //elements contain name of a repository
+
+
+      for (var i = 0; i < processed.length; i++) {
+        var repoChild = document.createElement("div");
+        repoChild.classList.add("repo-child");
+        repoChild.textContent = [processed[i].name];
+        repoParent.appendChild(repoChild);
+      }
+    });
   };
 
   userInformation();
-};
+  userRipos();
+}; //on clicking the search button it checks the input value and later adds it to API as a string
+//to later retrieve information about a user
+
 
 fetchButton.addEventListener("click", function () {
-  var searchedUser = document.querySelector('[data-search]');
+  var searchedUser = document.querySelector("[data-search]"); //data input
+
   var GITHUB_USER = "https://api.github.com/users/" + searchedUser.value;
-  console.log(GITHUB_USER);
-  loadInfo(GITHUB_USER);
-}); //searchBar.addEventListener("input", (e) => {
-//  checkNames(e);
-//});
-//const checkNames = (e) => {
-//  const value = e.target.value;
-//  //const myArray = [];
-//
-//  names.forEach((e) => {
-//    // myArray.push(e.innerHTML.toLowerCase())
-//    //console.log(myArray)
-//    if (e.textContent.includes(value)) {
-//      e.classList.toggle("hide", false);
-//      return;
-//    }
-//
-//    if (!e.textContent.includes(value)) {
-//      e.classList.toggle("hide", true);
-//      return;
-//    }
-//  });
-//};
+  var GITHUB_REPO = "https://api.github.com/users/" + searchedUser.value + "/repos";
+  console.log(GITHUB_USER, GITHUB_REPO);
+  loadInfo(GITHUB_USER, GITHUB_REPO);
+});
 },{}],"src/js/App.js":[function(require,module,exports) {
 "use strict";
 
 require("./API.js");
-
-var repoInfo = function repoInfo() {
-  var temp = document.querySelector(".test");
-  var clone = temp.content.cloneNode(true);
-  document.querySelector(".repo").appendChild(clone);
-  console.log(clone);
-};
-
-fetch("https://api.github.com/users/octocat/repos").then(function (response) {
-  var jsonResponse = response.json();
-  return jsonResponse;
-}).then(function (processed) {
-  console.log(processed[0].name);
-
-  for (var i = 0; i < processed.length; i++) {
-    console.log(processed[i].name);
-  }
-});
-
-var testFunc = function testFunc() {};
-
-addEventListener("load", function () {
-  for (var i = 0; i < 10; i++) {
-    repoInfo();
-  }
-});
 },{"./API.js":"src/js/API.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -230,7 +213,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43987" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42331" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
