@@ -18,6 +18,7 @@ const loadInfo = (user_api, repo_api) => {
       })
       .then((processed) => {
         avatar.src = processed.avatar_url;
+       
         username.textContent = processed.name;
         userURL.textContent = processed.html_url;
         creationDate.textContent = `Created at : ${processed.created_at.slice(
@@ -37,7 +38,7 @@ const loadInfo = (user_api, repo_api) => {
       })
       .then((processed) => {
         const repoParent = document.querySelector(".repo"); //parent where elements will be created
-        //if p
+        //makes sure that there are no multiple same elements
         while (repoParent.firstChild) {
           repoParent.firstChild.remove();
         }
