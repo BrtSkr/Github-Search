@@ -33,7 +33,7 @@
       font-size: 2vh;
       transition: 0.5s;
       &:focus {
-        outline: none;
+        z-index: 1;
         color: $color-white;
         transition: 0.5s;
       }
@@ -52,6 +52,7 @@
         box-shadow: 0 0 5px 2px white;
         transition: 0.3s;
         color: $color-white;
+        z-index: 1;
       }
     }
   }

@@ -18,7 +18,6 @@ const loadInfo = (user_api, repo_api) => {
       })
       .then((processed) => {
         avatar.src = processed.avatar_url;
-       
         username.textContent = processed.name;
         userURL.textContent = processed.html_url;
         creationDate.textContent = `Created at : ${processed.created_at.slice(
@@ -38,11 +37,11 @@ const loadInfo = (user_api, repo_api) => {
       })
       .then((processed) => {
         const repoParent = document.querySelector(".repo"); //parent where elements will be created
-        //makes sure that there are no multiple same elements
+        //makes sure that there are no multiple same elements (and elements from previous search)
         while (repoParent.firstChild) {
           repoParent.firstChild.remove();
         }
-        
+
         //creates elements that equal a number of repositories of a user
         //elements contain name of a repository
         for (var i = 0; i < processed.length; i++) {
@@ -58,7 +57,6 @@ const loadInfo = (user_api, repo_api) => {
   userRipos();
 };
 
-
 //on clicking the search button it checks the input value and later adds it to API as a string
 //to later retrieve information about a user
 fetchButton.addEventListener("click", () => {
@@ -70,4 +68,3 @@ fetchButton.addEventListener("click", () => {
   console.log(GITHUB_USER, GITHUB_REPO);
   loadInfo(GITHUB_USER, GITHUB_REPO);
 });
-
