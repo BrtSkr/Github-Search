@@ -121,6 +121,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var searchBar = document.querySelector(".search-input");
 var names = document.querySelectorAll(".result-info");
 var fetchButton = document.querySelector("[data-fetch]");
+var closeError = document.querySelector('.error-popup');
 
 var loadInfo = function loadInfo(user_api, repo_api) {
   var avatar = document.querySelector("[data-avatar]");
@@ -132,7 +133,17 @@ var loadInfo = function loadInfo(user_api, repo_api) {
   var userInformation = function userInformation() {
     fetch(user_api).then(function (response) {
       var processing = response.json();
-      return processing;
+
+      if (response.ok) {
+        console.log('uff works');
+        return processing;
+      }
+
+      if (!response.ok) {
+        closeError.style.transform = 'translateY(0)';
+        console.log('damn majster');
+        return;
+      }
     }).then(function (processed) {
       avatar.src = processed.avatar_url;
       username.textContent = processed.name;
@@ -169,9 +180,14 @@ var loadInfo = function loadInfo(user_api, repo_api) {
 
   userInformation();
   userRipos();
-}; //on clicking the search button it checks the input value and later adds it to API as a string
-//to later retrieve information about a user
+};
 
+var closeErrorPopup = function closeErrorPopup() {
+  closeError.style.transform = 'translateY(-100vh)';
+};
+
+closeError.addEventListener('click', closeErrorPopup); //on clicking the search button it checks the input value and later adds it to API as a string
+//to later retrieve information about a user
 
 fetchButton.addEventListener("click", function () {
   var searchedUser = document.querySelector("[data-search]"); //data input
@@ -213,7 +229,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38795" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45451" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
