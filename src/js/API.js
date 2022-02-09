@@ -1,6 +1,7 @@
 const searchBar = document.querySelector(".search-input");
 const names = document.querySelectorAll(".result-info");
 const fetchButton = document.querySelector("[data-fetch]");
+const closeError = document.querySelector('.error-popup');
 
 const loadInfo = (user_api, repo_api) => {
   const avatar = document.querySelector("[data-avatar]");
@@ -14,7 +15,16 @@ const loadInfo = (user_api, repo_api) => {
     fetch(user_api)
       .then((response) => {
         const processing = response.json();
-        return processing;
+       
+        if (response.ok) {
+          console.log('uff works')
+          return processing;
+        }
+        if (!response.ok) {
+          closeError.style.transform = 'translateY(0)'
+          console.log('damn majster')
+          return
+        }
       })
       .then((processed) => {
         avatar.src = processed.avatar_url;
@@ -57,6 +67,11 @@ const loadInfo = (user_api, repo_api) => {
   userRipos();
 };
 
+const closeErrorPopup = () => {
+  closeError.style.transform = 'translateY(-100vh)';
+}
+
+closeError.addEventListener('click', closeErrorPopup);
 //on clicking the search button it checks the input value and later adds it to API as a string
 //to later retrieve information about a user
 fetchButton.addEventListener("click", () => {

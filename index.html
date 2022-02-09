@@ -9,7 +9,13 @@
 </head>
 <body>
     <div class="container">
-          
+          <div class="error-popup">
+            <button class="btn-error" data-close-error>
+              <i class="bi bi-chevron-compact-up"></i>
+            </button>
+              <h1 class="error-message">You have encountered an error!</h1>
+              <p class="error-tip">Please make sure you entered username correctly</p>
+          </div>
       <section class="user-search">
         <div class="search-input">
           <input class="search-bar" placeholder="Search Github username" type="text" data-search>
@@ -29,10 +35,14 @@
              </div>
              
          </div>
-         <p class="repo-text">Repositories</p>
-         <div class="repo">
-               
-        </div>
+         
+         <div class="repo-info">
+           <p class="repo-text">Repositories</p>
+           <div class="repo">
+                 
+         </div>
+
+         </div>
 
 
           </div>
