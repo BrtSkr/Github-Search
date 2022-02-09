@@ -1768,7 +1768,7 @@ body {
   transition: 0.5s;
 }
 .user-search .search-input .search-bar:focus {
-  outline: none;
+  z-index: 1;
   color: white;
   transition: 0.5s;
 }
@@ -1787,6 +1787,7 @@ body {
   box-shadow: 0 0 5px 2px white;
   transition: 0.3s;
   color: white;
+  z-index: 1;
 }
 .user-search .user-result {
   width: 100%;
