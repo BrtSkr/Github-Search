@@ -1817,7 +1817,11 @@ body {
   font-size: 2vh;
   width: 90%;
   border-radius: 0 15px 15px 15px;
+<<<<<<< Updated upstream
   box-shadow: -4vh -4vh 0px -30px #F06292;
+=======
+  box-shadow: -2.7rem -2.2rem 0px -30px #F06292;
+>>>>>>> Stashed changes
 }
 .user-search .user-result .user-info .avatar {
   min-width: 15vh;
