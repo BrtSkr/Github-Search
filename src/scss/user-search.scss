@@ -5,15 +5,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 5vh;
-  background: $neutral-dblue;
-  color: $color-lgray;
+  background: $neutral-dark;
+  color: #ffffff;
+  min-width: 80%;
   max-width: 100vh;
-  min-height: 35vh;
-  margin: 25vh auto;
+  min-height: 85vh;
+  margin: 5vh auto;
   padding: 3vh 2.5vh;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.589) inset,
-    0 0 5px 1px rgba(0, 0, 0, 0.589);
+  border-radius: 30px;
+  //box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.849) inset,
+  //  0 0 15px 1px rgba(0, 0, 0, 0.904);
   .search-input {
     display: flex;
     flex-direction: row;
@@ -24,8 +25,8 @@
     min-height: 6vh;
 
     .search-bar {
-      background: $neutral-dark;
-      color: $color-gray;
+      background: $primary-pink;
+      color: #000000;
       width: 70%;
       text-align: center;
       border: none;
@@ -34,13 +35,15 @@
       transition: 0.5s;
       &:focus {
         z-index: 1;
-        color: $color-white;
+        box-shadow: 0 0 5px 2px white;
+        outline: none;
+        color: black;
         transition: 0.5s;
       }
     }
     .btn-fetch {
-      background: $neutral-dark;
-      color: $color-gray;
+      background: $primary-pink;
+      color: black;
       min-width: 5vh;
       width: 15%;
       border: none;
@@ -51,29 +54,50 @@
       &:hover {
         box-shadow: 0 0 5px 2px white;
         transition: 0.3s;
-        color: $color-white;
         z-index: 1;
       }
     }
   }
   .user-result {
     width: 100%;
+
     .user-info {
+      position: relative;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
       margin: auto;
-
+      background: $neutral-base;
+      min-height: 25vh;
+      max-height: 45vh;
+      padding: 3vh;
       gap: 5vh;
       font-size: 2vh;
-
+      width: 90%;
+      border-radius: 0 15px 15px 15px;
+      box-shadow: -4vh -4vh 0px -30px $primary-pink;
+     
+      //&::before{
+      //    position: absolute;
+      //    background: green;
+      //    width: 15px;
+      //    height: 15px;
+      //    content: "";
+      //    top: 0;
+      //    right: 0;
+      //    bottom: 0;
+      //    left: 0; 
+      //  
+      //}
       .avatar {
         min-width: 15vh;
         min-height: 15vh;
+        max-height: 15vh;
         max-width: 15vh;
         border: 1px solid gray;
         border-radius: 30px;
+        margin: auto 0;
       }
       .user-details {
         margin: auto 0;
@@ -83,28 +107,34 @@
         }
       }
     }
-    .repo-text{
-      text-align: center;
-      font-size: 4vh;
-      margin: 10vh 0 0 0;
-    }
-    .repo {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
-      gap: 1vh;
-      border: 2px solid gray;
-      font-size: 2vh;
-      padding: 1vh;
-      margin: 2vh 0 0 0;
-      min-height: 10vh;
-      .repo-child {
-        min-width: 30vh;
-        max-width: 30vh;
-        min-height: 5vh;
+    .repo-info {
+      background: #272727;
+      min-height: 25vh;
+      border-radius: 15px;
+      .repo-text {
         text-align: center;
-        
-        border-left: 3px solid gray;
-        margin: auto;
+        font-size: 4vh;
+        padding: 2vh 0 0 0;
+        margin: 5vh 0 0 0;
+      }
+      .repo {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
+        gap: 1vh;
+        border-top: 3px solid $primary-pink;
+        font-size: 2vh;
+        padding: 4vh 2vh;
+        margin: 2vh 0 0 0;
+        min-height: 10vh;
+        .repo-child {
+          min-width: 30vh;
+          max-width: 30vh;
+          min-height: 5vh;
+          text-align: center;
+
+          border-left: 3px solid $primary-pink;
+          margin: auto;
+        }
       }
     }
   }
