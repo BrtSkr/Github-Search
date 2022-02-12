@@ -25,8 +25,8 @@
     min-height: 6vh;
 
     .search-bar {
-      background: $primary-pink;
-      color: #000000;
+      background: $neutral-base;
+      color: $color-white;
       width: 70%;
       text-align: center;
       border: none;
@@ -37,12 +37,12 @@
         z-index: 1;
         box-shadow: 0 0 5px 2px white;
         outline: none;
-        color: black;
+        
         transition: 0.5s;
       }
     }
     .btn-fetch {
-      background: $primary-pink;
+      background: $primary-red;
       color: black;
       min-width: 5vh;
       width: 15%;
@@ -76,7 +76,7 @@
       font-size: 2vh;
       width: 90%;
       border-radius: 0 15px 15px 15px;
-      box-shadow: -2.7rem -2.2rem 0px -30px $primary-pink;
+      box-shadow: -2.7rem -2.2rem 0px -30px $primary-red;
      
       //&::before{
       //    position: absolute;
@@ -121,7 +121,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
         gap: 1vh;
-        border-top: 3px solid $primary-pink;
+        border-top: 3px solid $primary-red;
         font-size: 2vh;
         padding: 4vh 2vh;
         margin: 2vh 0 0 0;
@@ -132,7 +132,7 @@
           min-height: 5vh;
           text-align: center;
 
-          border-left: 3px solid $primary-pink;
+          border-left: 3px solid $primary-red;
           margin: auto;
         }
       }

@@ -1,37 +1,53 @@
-.error-popup{
-    position: fixed;
-    background: $primary-pink;
-    border-radius:15px 15px 10px 10px;
-    box-shadow: 3px 5px 15px 3px black;
-    max-height: 25vh;
-    min-width: 35vh;
-    width: 30%;
-    left: 0;
-    right: 0;
+.error-popup {
+  display: block;
+  position: fixed;
+  background: $primary-red;
+  border-radius: 25px 25px 10px 10px;
+  box-shadow: 3px 5px 15px 3px black;
+  max-height: 20rem;
+  min-width: 35vh;
+  width: 30%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: translateY(-100vh);
+  transition: 0.5s;
+  cursor: pointer;
+  z-index: 10;
+  
+  .btn-error {
     top: 0;
     bottom: 0;
+    display: block;
+    background: rgb(0, 0, 0);
+    border: none;
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    font-size: 4vh;
     margin: auto;
-    transform: translateY(-100vh);
-    transition: .5s;
+    color: $color-white;
     cursor: pointer;
-    z-index: 10;
-    .btn-error{
-        display: block;
-        background: rgb(0, 0, 0);
-        border: none;
-        border-radius: 15px 15px 0 0;
-        width: 100%;
-        font-size: 4vh;
-        margin: -1vh 0 0 0;
-        color: $color-white;
-        cursor: pointer;
+    position: relative;
+  }
+
+  .text-wrap {
+    position: relative;
+    top: 20%;
+    bottom: 50%;
+    margin: auto;
+
+    .error-message {
+      text-align: center;
+      color: $color-white;
     }
-    .error-message{
-        text-align: center;
-        color: $color-white;
+
+    .error-tip {
+      text-align: center;
+      color: $color-lgray;
     }
-    .error-tip{
-        text-align: center;
-        color: $color-lgray;
-    }
+
+  }
+
 }
