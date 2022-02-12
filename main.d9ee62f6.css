@@ -1767,8 +1767,8 @@ body {
   min-height: 6vh;
 }
 .user-search .search-input .search-bar {
-  background: #F06292;
-  color: #000000;
+  background: #272727;
+  color: white;
   width: 70%;
   text-align: center;
   border: none;
@@ -1780,11 +1780,10 @@ body {
   z-index: 1;
   box-shadow: 0 0 5px 2px white;
   outline: none;
-  color: black;
   transition: 0.5s;
 }
 .user-search .search-input .btn-fetch {
-  background: #F06292;
+  background: #fc4d4f;
   color: black;
   min-width: 5vh;
   width: 15%;
@@ -1817,11 +1816,7 @@ body {
   font-size: 2vh;
   width: 90%;
   border-radius: 0 15px 15px 15px;
-<<<<<<< Updated upstream
-  box-shadow: -4vh -4vh 0px -30px #F06292;
-=======
-  box-shadow: -2.7rem -2.2rem 0px -30px #F06292;
->>>>>>> Stashed changes
+  box-shadow: -2.7rem -2.2rem 0px -30px #fc4d4f;
 }
 .user-search .user-result .user-info .avatar {
   min-width: 15vh;
@@ -1854,7 +1849,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
   gap: 1vh;
-  border-top: 3px solid #F06292;
+  border-top: 3px solid #fc4d4f;
   font-size: 2vh;
   padding: 4vh 2vh;
   margin: 2vh 0 0 0;
@@ -1865,16 +1860,17 @@ body {
   max-width: 30vh;
   min-height: 5vh;
   text-align: center;
-  border-left: 3px solid #F06292;
+  border-left: 3px solid #fc4d4f;
   margin: auto;
 }
 
 .error-popup {
+  display: block;
   position: fixed;
-  background: #F06292;
-  border-radius: 15px 15px 10px 10px;
+  background: #fc4d4f;
+  border-radius: 25px 25px 10px 10px;
   box-shadow: 3px 5px 15px 3px black;
-  max-height: 25vh;
+  max-height: 20rem;
   min-width: 35vh;
   width: 30%;
   left: 0;
@@ -1888,21 +1884,30 @@ body {
   z-index: 10;
 }
 .error-popup .btn-error {
+  top: 0;
+  bottom: 0;
   display: block;
   background: black;
   border: none;
   border-radius: 15px 15px 0 0;
   width: 100%;
   font-size: 4vh;
-  margin: -1vh 0 0 0;
+  margin: auto;
   color: white;
   cursor: pointer;
+  position: relative;
 }
-.error-popup .error-message {
+.error-popup .text-wrap {
+  position: relative;
+  top: 20%;
+  bottom: 50%;
+  margin: auto;
+}
+.error-popup .text-wrap .error-message {
   text-align: center;
   color: white;
 }
-.error-popup .error-tip {
+.error-popup .text-wrap .error-tip {
   text-align: center;
   color: #cecece;
 }
