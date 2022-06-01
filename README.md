@@ -2,7 +2,7 @@
 * [General info]
 * [Technologies] 
 ## General info
-When you enter website it detects your ip address and shows your approximate location
+Find repositories and informations about users on Github
 
 ## Technologies
 Project is created with:
